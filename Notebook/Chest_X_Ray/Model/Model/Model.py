@@ -19,7 +19,7 @@ import pandas as pd
 from jupyterthemes import jtplot
 jtplot.style(theme = 'monokai', context = 'notebook', ticks = True, grid = False) 
 
-XRay_Directory = 'C:\\Users\\Sanjana Rattan\\Notebook\\Chest_X_Ray\\train'
+XRay_Directory = 'train'
 print(os.listdir(XRay_Directory))
 image_generator=ImageDataGenerator(rescale = 1./255, validation_split=0.2)
 train_generator=image_generator.flow_from_directory(batch_size=40,directory=XRay_Directory,shuffle=True,
@@ -105,7 +105,7 @@ model.compile(optimizer=tf.keras.optimizers.legacy.RMSprop(learning_rate=0.0001,
               loss='categorical_crossentropy', metrics=['accuracy'])
 
 
-test_directory = 'C:\\Users\\Sanjana Rattan\\Notebook\\Chest_X_Ray\\Test'
+test_directory = 'Test'
 
 test_gen = ImageDataGenerator(rescale=1./255)
 
